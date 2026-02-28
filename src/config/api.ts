@@ -1,4 +1,4 @@
-const PRODUCTION_API = "https://hotel-hub-main-wcke.vercel.app";
+const PRODUCTION_API = "hotel-hub-main.vercel.app";
 
 function getApiBase(): string {
   const env = (import.meta.env.VITE_API_BASE ?? "").toString().replace(/\/+$/, "");
