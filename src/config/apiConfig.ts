@@ -4,6 +4,7 @@ function getApiBaseUrl(): string {
   if (typeof window !== "undefined" && window.location.hostname === "localhost") {
     return "http://localhost:8000";
   }
-  return "/api/guest";
+  return "https://hotel-hub-main.vercel.app";
 }
 export const API_BASE_URL = getApiBaseUrl();
+
