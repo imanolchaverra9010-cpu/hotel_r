@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 222 47% 20%;
+    --primary-foreground: 40 33% 98%;
+
+    --secondary: 40 33% 96%;
+    --secondary-foreground: 222 47% 20%;
+
+    --muted: 40 20% 94%;
+    --muted-foreground: 222 20% 45%;
+
+    --accent: 38 92% 50%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 20% 88%;
+    --input: 40 20% 88%;
+    --ring: 338 76% 60%;
+
+    --radius: 0.5rem;
+
+    /* Custom hotel tokens */
+    --gold: 38 92% 50%;
+    --gold-light: 38 92% 70%;
+    --gold-dark: 38 70% 40%;
+    --rose: 338 76% 60%;
+    --rose-light: 338 90% 78%;
+    --rose-dark: 338 60% 40%;
+    --navy: 222 47% 20%;
+    --navy-light: 222 35% 35%;
+    --navy-dark: 222 55% 12%;
+    --cream: 40 33% 98%;
+    --cream-dark: 40 25% 92%;
+
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(38 92% 50%) 0%, hsl(var(--rose)) 100%);
+    --gradient-navy: linear-gradient(135deg, hsl(222 47% 20%) 0%, hsl(222 55% 12%) 100%);
+    --gradient-hero: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(236, 72, 153, 0.10);
+    --shadow-card: 0 8px 30px -8px rgba(0, 0, 0, 0.12), 0 10px 30px -18px rgba(236, 72, 153, 0.32);
+    --shadow-elevated: 0 20px 50px -12px rgba(0, 0, 0, 0.2), 0 18px 50px -38px rgba(236, 72, 153, 0.42);
+
+    --sidebar-background: 222 47% 20%;
+    --sidebar-foreground: 40 33% 98%;
+    --sidebar-primary: 38 92% 50%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 222 35% 28%;
+    --sidebar-accent-foreground: 40 33% 98%;
+    --sidebar-border: 222 35% 28%;
+    --sidebar-ring: 38 92% 50%;
+  }
+
+  .dark {
+    --background: 222 55% 8%;
+    --foreground: 40 33% 98%;
+
+    --card: 222 47% 12%;
+    --card-foreground: 40 33% 98%;
+
+    --popover: 222 47% 12%;
+    --popover-foreground: 40 33% 98%;
+
+    --primary: 38 92% 50%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 222 35% 18%;
+    --secondary-foreground: 40 33% 98%;
+
+    --muted: 222 35% 18%;
+    --muted-foreground: 40 20% 65%;
+
+    --accent: 38 92% 50%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 222 35% 22%;
+    --input: 222 35% 22%;
+    --ring: 38 92% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-gold {
+    background: var(--gradient-gold);
+  }
+
+  .bg-gradient-navy {
+    background: var(--gradient-navy);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .shadow-glow {
+    box-shadow: 0 0 20px rgba(212, 165, 165, 0.6), 0 0 40px rgba(212, 165, 165, 0.3);
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
