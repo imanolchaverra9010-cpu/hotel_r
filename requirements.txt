@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+sqlalchemy
+mysql-connector-python
+pydantic
+python-multipart
+httpx
+python-dotenv
+psycopg2-binary
+boto3
