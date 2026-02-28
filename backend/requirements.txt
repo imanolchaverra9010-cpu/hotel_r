@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+sqlalchemy
+mysql-connector-python
+pydantic
+python-multipart
+httpx
+python-dotenv
+Flask==3.0.0
+flask-cors
+psycopg2-binary
+boto3
